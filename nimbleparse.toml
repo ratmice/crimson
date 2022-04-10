@@ -9,8 +9,8 @@ yacc_kind = {"Original" = "NoAction"}
 #yacc_kind = "Eco"
 #yacc_kind = "Grmtools"
 
-#recovery = "CPCTPlus"
-recovery = "None"
+#recovery_kind = "CPCTPlus"
+recovery_kind = "None"
 [[tests]]
 dir = "test/pass"
 pass=true
