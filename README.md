@@ -5,7 +5,7 @@ Heavily inspired by Ron 'Rust object notation'.
 Maintenance/usage: This isn't a finished project, or a project under active sustained development.
 It's something I work on from time to time between other projects...
 
-Goals:
+* Goals:
     * Typed(?)
     * Type inference
     * Differentiate between Ordered and unordered collections.
@@ -16,16 +16,16 @@ Goals:
     * Constants
     * Efficient support for collections of data with fixed size children.
 
-Non-Goals:
+* Non-Goals:
     * Easily edited (If we run out of brackets, we may use ones from unicode)
 
-Array:  `[a, b, c]`,
-Set:    `{a, b, c}`,
-Map:    `{A=a, B=b}`.
-Range:  `start..end`,
-Char:   `'c'`,
-String: `"foo"`,
-N-tuple `(a, b, c)`
++ Array:  `[a, b, c]`,
++ Set:    `{a, b, c}`,
++ Map:    `{A=a, B=b}`.
++ Range:  `start..end`,
++ Char:   `'c'`,
++ String: `"foo"`,
++ N-tuple `(a, b, c)`
 
 Types go first and are enclosed in `<>`
 
