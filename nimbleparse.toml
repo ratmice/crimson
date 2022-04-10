@@ -1,0 +1,20 @@
+
+[[parsers]]
+l_file = "src/crimson.l"
+y_file = "src/crimson.y"
+extension = ".crimson"
+yacc_kind = {"Original" = "NoAction"}
+#yacc_kind = {"Original" = "UserAction"}
+#yacc_kind = {"Original" = "GenericParseTree"}
+#yacc_kind = "Eco"
+#yacc_kind = "Grmtools"
+
+#recovery = "CPCTPlus"
+recovery = "None"
+[[tests]]
+dir = "test/pass"
+pass=true
+
+[[tests]]
+dir = "test/fail"
+pass=false

@@ -1,0 +1,16 @@
+[package]
+name = "crimson"
+version = "0.1.0"
+edition = "2021"
+description = "Crims object notation"
+
+
+[build-dependencies]
+cfgrammar = "0.11"
+lrlex = "0.11"
+lrpar = "0.11"
+
+[dependencies]
+cfgrammar = "0.11"
+lrlex = "0.11"
+lrpar = "0.11"
