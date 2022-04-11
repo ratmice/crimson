@@ -12,8 +12,11 @@ test/output/%.out: test/pass/%.crimson src/crimson.l src/crimson.y
 test/output/%.out: test/fail/%.crimson src/crimson.l src/crimson.y
 	! nimbleparse -y original src/crimson.l src/crimson.y $< >$@
 
-test: $(test_outputs) $(test_fail_outputs)
+test: test/output $(test_outputs) $(test_fail_outputs)
 	@echo done
+
+test/output:
+	mkdir -p $@
 .PHONY: clean
 clean:
 	rm -f test/output/*.out
