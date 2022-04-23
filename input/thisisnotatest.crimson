@@ -1,0 +1,11 @@
+// When using nimbleparse_lsp this file won't reparse when changing the parser or lexer.
+// just when you change this file will it reparse.
+struct Foo<T> {
+  foo: <T>
+};
+
+struct Bar<T> {
+  bar: <T>
+};
+
+<[u32]>[1,2,3]
