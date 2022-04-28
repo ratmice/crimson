@@ -1,4 +1,4 @@
-struct Foo<T>{
+struct Foo<T> {
   foo: <T>
 };
 

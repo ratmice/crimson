@@ -2,14 +2,13 @@
 // FIXME missing strings.
 %start Source
 %%
-Source: 
+Source:
     Prelude Expr
     ;
 
 Prelude:
       TyDecls
     ;
-
 
 InnerAttr: '#' '!' '[' Attr ']';
 OuterAttr: '#' '[' Attr ']';
@@ -25,7 +24,7 @@ Attr:
     |'ID' '(' Expr ')'
     ;
 
-TyDeclOpt: 
+TyDeclOpt:
     | TyDecl
     ;
 
@@ -41,7 +40,7 @@ Expr:
     | Ty Expr
     | Unit
     | Unordered
-    | Ordered	
+    | Ordered
     | Value
     ;
 
@@ -95,7 +94,7 @@ Ty:
 
 TypeExpr:
      'ID'
-   | 'ID' '<' TypeExpr '>'  
+   | 'ID' '<' TypeExpr '>'
    | '[' TypeExpr ']'
    | '{' TypeExpr '}'
    | '(' ')'
