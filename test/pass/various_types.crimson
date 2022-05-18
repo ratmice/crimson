@@ -1,0 +1,6 @@
+
+<()>{
+    set = {1, 1, 2, 6},
+    array = [9,9,9],
+    map = {foo = bar, bar = baz}
+}

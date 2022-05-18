@@ -3,7 +3,9 @@ It intends to build an object notation for a typed language.
 Heavily inspired by Ron 'Rust object notation'.
 
 Maintenance/usage: This isn't a finished project, or a project under active sustained development.
-It's something I work on from time to time between other projects...
+It's something I work on from time to time between other projects... 
+
+Expect it to change incompatibly from it's current state.
 
 * Goals:
     * Typed(?)
