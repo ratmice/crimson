@@ -2,5 +2,10 @@
 <()>{
     set = {1, 1, 2, 6},
     array = [9,9,9],
-    map = {foo = bar, bar = baz}
+    map = {foo = bar, bar = baz},
+    // Ensure everything allows with trailing commas, besides being convenient
+    // it allows each element of a sequence to be of uniform size.
+    set2 = {1, 1, 2, 6, },
+    array3 = [9,9,9,],
+    map4 = {foo = bar, bar = baz, },
 }

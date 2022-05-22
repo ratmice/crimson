@@ -1,5 +1,6 @@
-// foo
+// comment ending with newline
 struct Foo {
 
 };
 <()>()
+// comment at EOF without newline

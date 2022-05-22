@@ -3,7 +3,7 @@
 %start Source
 %%
 Source:
-    Prelude Expr
+    | Prelude Expr
     ;
 
 Prelude:
@@ -37,7 +37,7 @@ Fields:
     ;
 
 Expr:
-    | Ty Expr
+    Ty Expr
     | Unit
     | Unordered
     | Ordered
@@ -48,15 +48,33 @@ Unit:
     '(' ')'
     ;
 
+
 // Sets, HashTables
+///////////////////
+// In prehistory KvSeq had a # prefix, e.g.
+//
+// #{ foo = 0, bar = 1 }
+//
+// This is perhaps worth resurrecting since it means that we can distinguish
+// #{} from {}
+//
+// As it is though you have 2 options:
+// 1. Deserializer's choice
+// 2. Serializer sends an explicit type.
+
+
 Unordered:
-    '{' ExprSeq '}'
+    '{' '}'
+    | '{' ExprSeq '}'
     | '{' KvSeq '}'
     ;
 
 // Array
+////////
+// See comment about # prefix
 Ordered:
-    '[' ExprSeq ']'
+    '[' ']'
+    | '[' ExprSeq ']'
     // The equivalent of an Ordered key value data structure would be some bare form of a tree
     // Acting like an array of tuples, It is probably best to just encode this explicitly as a array of tuples,
     // or explicitly as a struct.
@@ -69,15 +87,13 @@ Ordered:
     // | '[' KvSeq ']'
     ;
 
-ExprSeq:
-      Expr
-    | ExprSeq "," Expr
-    ;
+ExprSeq: Expr ExprComma;
+MaybeExprSeq: | ExprSeq;
+ExprComma: | "," MaybeExprSeq;
 
-KvSeq:
-    Expr '=' Expr
-    | KvSeq ',' Expr '=' Expr
-    ;
+KvSeq: Expr '=' Expr KvComma;
+MaybeKvSeq: | KvSeq;
+KvComma: | ',' MaybeKvSeq;
 
 Value:
       'ID'
