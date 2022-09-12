@@ -1,4 +1,18 @@
 struct Foo<T> {
+    x: <Foo<()>>,
+    y: <()>,
+};
+
+struct Foo<T> {
+    x: <Foo<()>>,
+    y: <()>
+};
+
+struct Bar<T> {
+    x: <Foo<()>>
+};
+
+struct Empty<T> {
 };
 
 <[u32]>[1,2,3]
