@@ -1,7 +1,7 @@
 
 // FIXME missing strings.
 %start Source
-%token ID
+%token ID NUM
 %%
 Source:
     | Prelude Expr
@@ -98,8 +98,8 @@ KvComma: | ',' MaybeKvSeq;
 
 Value:
       ID
-    | 'NUM'
-    | 'NUM' '..' 'NUM'
+    | NUM
+    | NUM '..' NUM
     ;
 
 TyOpt:
