@@ -1,6 +1,7 @@
 
 // FIXME missing strings.
 %start Source
+%token ID
 %%
 Source:
     | Prelude Expr
@@ -20,8 +21,8 @@ TyDecls:
     ;
 
 Attr:
-    'ID' '=' Expr
-    |'ID' '(' Expr ')'
+      ID '=' Expr
+    | ID '(' Expr ')'
     ;
 
 TyDeclOpt:
@@ -29,11 +30,11 @@ TyDeclOpt:
     ;
 
 TyDecl:
-    'struct' 'ID' TyOpt '{' Fields '}'
+    'struct' ID TyOpt '{' Fields '}'
     ;
 Fields:
-    | 'ID' ':' Ty ',' Fields
-    | 'ID' ':' Ty
+    | ID ':' Ty ',' Fields
+    | ID ':' Ty
     ;
 
 Expr:
@@ -96,7 +97,7 @@ MaybeKvSeq: | KvSeq;
 KvComma: | ',' MaybeKvSeq;
 
 Value:
-      'ID'
+      ID
     | 'NUM'
     | 'NUM' '..' 'NUM'
     ;
@@ -109,8 +110,8 @@ Ty:
    ;
 
 TypeExpr:
-     'ID'
-   | 'ID' '<' TypeExpr '>'
+     ID
+   | ID '<' TypeExpr '>'
    | '[' TypeExpr ']'
    | '{' TypeExpr '}'
    | '(' ')'
